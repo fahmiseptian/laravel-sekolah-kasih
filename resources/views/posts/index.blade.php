@@ -24,7 +24,6 @@
                                 <th>No</th>
                                 <th>Cover</th>
                                 <th>Title</th>
-                                <th>Language</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -45,7 +44,6 @@
                                     <input type="file" class="cover-input" data-post-id="{{ $post['id'] }}" style="display: none;" accept="image/*">
                                 </td>
                                 <td>{{ $post['title']['rendered'] }}</td>
-                                <td>{{ $post['lang'] == 'en' ? 'English' : 'Indonesia' }}</td>
                                 <td>
                                     @if ($post['status'] !== 'publish')
                                     <button class="btn btn-warning btn-sm update-status"

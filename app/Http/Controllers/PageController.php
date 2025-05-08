@@ -20,30 +20,9 @@ class PageController extends BaseController
             'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
         ])->get(env('URL_WP') . '/wp-json/wp/v2/pages', [
             'status' => 'any',
-            'lang' => 'id'
         ]);
 
-        // Ambil halaman bahasa Inggris
-        $response_en = Http::withToken($token)->withHeaders([
-            'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
-        ])->get(env('URL_WP') . '/wp-json/wp/v2/pages', [
-            'status' => 'any',
-            'lang' => 'en'
-        ]);
-
-        $pages_id = $response_id->json();
-        $pages_en = $response_en->json();
-
-        // Tambahkan informasi bahasa manual
-        foreach ($pages_id as &$page) {
-            $page['lang'] = 'id';
-        }
-        foreach ($pages_en as &$page) {
-            $page['lang'] = 'en';
-        }
-
-        // Gabungkan
-        $pages = array_merge($pages_id, $pages_en);
+        $pages = $response_id->json();
 
         return view('page.index', compact('pages'));
     }

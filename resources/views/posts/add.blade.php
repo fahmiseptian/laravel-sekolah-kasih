@@ -43,11 +43,10 @@
                             <option value="publish">Publish</option>
                         </select>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 d-none">
                         <label for="lang" class="form-label">Language</label>
                         <select class="form-control" id="lang" name="lang">
-                            <option value="id">Indonesian</option>
-                            <option value="en">English</option>
+                            <option value="id" selected>Indonesian</option>
                         </select>
                     </div>
 

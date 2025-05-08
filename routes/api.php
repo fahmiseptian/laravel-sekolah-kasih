@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
@@ -36,9 +35,6 @@ Route::post('/posts/update-cover', [PostsController::class, 'updateCover']);
 
 Route::post('/page-update', [PageController::class, 'UpdatePage']);
 Route::delete('/page-delete/{id}', [PageController::class, 'DeletePage']);
-
-Route::post('/banners/update', [BannerController::class, 'updateBanners']);
-Route::delete('/banners', [BannerController::class, 'deleteBanner']);
 
 Route::post('/users/register', [UsersController::class, 'register']);
 Route::post('/users/update-status', [UsersController::class, 'updateStatus']);

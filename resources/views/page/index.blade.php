@@ -21,7 +21,6 @@
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Slug</th>
-                                <th>Language</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -32,7 +31,6 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $page['title']['rendered'] ?? '-' }}</td>
                                     <td>{{ $page['slug'] }}</td>
-                                    <td>{{ $page['lang'] == 'en' ? 'English' : 'Indonesia' }}</td>
                                     <td>
                                         @if ($page['status'] === 'publish')
                                             <a href="#" title="Published" style="color: green;"

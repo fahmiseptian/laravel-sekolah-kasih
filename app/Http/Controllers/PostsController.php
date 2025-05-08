@@ -23,31 +23,8 @@ class PostsController extends BaseController
             '_embed' => true
         ]);
 
-        $response_en = Http::withToken($token)->withHeaders([
-            'User-Agent' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36'
-        ])->get(env('URL_WP') . '/wp-json/wp/v2/posts', [
-            'status' => 'any',
-            'lang' => 'en',
-            '_embed' => true
-        ]);
+        $posts = $response_id->json();
 
-        $posts_id = $response_id->json();
-        $posts_en = $response_en->json();
-
-        foreach ($posts_id as &$post) {
-            $post['lang'] = 'id';
-            $post['cover'] = isset($post['_embedded']['wp:featuredmedia'][0]['source_url'])
-                ? $post['_embedded']['wp:featuredmedia'][0]['source_url']
-                : null;
-        }
-        foreach ($posts_en as &$post) {
-            $post['lang'] = 'en';
-            $post['cover'] = isset($post['_embedded']['wp:featuredmedia'][0]['source_url'])
-                ? $post['_embedded']['wp:featuredmedia'][0]['source_url']
-                : null;
-        }
-
-        $posts = array_merge($posts_id, $posts_en);
 
         return view('posts.index', compact('posts'));
     }

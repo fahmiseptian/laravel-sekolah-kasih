@@ -17,7 +17,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a class="text-nowrap logo-img text-center d-block py-3 w-100">
-                                    <img src="{{ asset('assets/images/logos/logo.png') }}" alt="">
+                                    <img src="{{ asset('assets/images/logos/logo.png') }}" width="100px" height="100px" alt="">
                                 </a>
                                 <hr>
                                 <form id="loginForm">
