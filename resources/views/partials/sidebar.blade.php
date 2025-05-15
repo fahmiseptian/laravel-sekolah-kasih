@@ -45,15 +45,15 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('facility') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="iconoir:page" class="fs-6"></iconify-icon>
                         </span>
-                        <span class="hide-menu">facility</span>
+                        <span class="hide-menu">Facility Items</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('banner') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="material-symbols:planner-banner-ad-pt-rounded" class="fs-6"></iconify-icon>
                         </span>
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('infomartion') }}" aria-expanded="false">
                         <span>
                             <iconify-icon icon="fluent:form-28-regular" class="fs-6"></iconify-icon>
                         </span>

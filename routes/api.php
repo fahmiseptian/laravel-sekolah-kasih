@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerSettingController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
@@ -28,6 +29,9 @@ Route::delete('/post-delete/{id}', [PostsController::class, 'deletePost']);
 Route::post('/posts/update-cover', [PostsController::class, 'updateCover']);
 
 
+
+Route::post('/banner/add', [BannerSettingController::class, 'addBanner']);
+Route::delete('/banner/{id}', [BannerSettingController::class, 'deleteBanner']);
 
 Route::post('/page-update', [PageController::class, 'UpdatePage']);
 Route::delete('/page-delete/{id}', [PageController::class, 'DeletePage']);

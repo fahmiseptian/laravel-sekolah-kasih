@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerSettingController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacilityController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ThemeController;
@@ -32,6 +35,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/page', [PageController::class, 'index'])->name('page');
 
     Route::get('/theme', [ThemeController::class, 'index'])->name('theme');
+
+    Route::get('/facility', [FacilityController::class, 'index'])->name('facility');
+
+    Route::get('/banner', [BannerSettingController::class, 'index'])->name('banner');
+
+    Route::get('/infomartion', [InformationController::class, 'index'])->name('infomartion');
 
     Route::get('/users', [UsersController::class, 'index'])->name('users');
     Route::get('/users/add', [UsersController::class, 'add'])->name('users.add');
